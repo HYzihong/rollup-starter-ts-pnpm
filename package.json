@@ -1,0 +1,34 @@
+{
+  "name": "rollup-starter-ts-pnpm",
+  "version": "1.0.0",
+  "description": "To fast start a typescript library by pnpm .",
+  "main": "lib/library.cjs.js",
+  "module": "lib/library.esm.js",
+  "scripts": {
+    "dev": "rollup -c -w",
+    "build:type": "tsc -p ./tsconfig.type.json",
+    "build": "rollup --config rollup.config.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HYzihong/rollup-starter-ts-pnpm.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HYzihong/rollup-starter-ts-pnpm/issues"
+  },
+  "homepage": "https://github.com/HYzihong/rollup-starter-ts-pnpm#readme",
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^8.3.1",
+    "@types/jest": "^27.4.1",
+    "jest": "^27.5.1",
+    "rollup": "^2.70.0",
+    "rollup-plugin-sourcemaps": "^0.6.3",
+    "ts-jest": "^27.1.3",
+    "tslib": "^2.3.1",
+    "typescript": "^4.6.2"
+  }
+}
