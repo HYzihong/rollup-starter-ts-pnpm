@@ -8,7 +8,14 @@
     "dev": "rollup -c -w",
     "build:type": "tsc -p ./tsconfig.type.json",
     "build": "rollup --config rollup.config.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "cz": "git-cz",
+    "prepare": "husky install",
+    "commit": "git add . && git cz",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
+    "lint": "lint-staged",
+    "release": "standard-version",
+    "release-minor": "standard-version --release-as minor",
+    "release-patch": "standard-version --release-as patch"
   },
   "repository": {
     "type": "git",
@@ -21,9 +28,44 @@
     "url": "https://github.com/HYzihong/rollup-starter-ts-pnpm/issues"
   },
   "homepage": "https://github.com/HYzihong/rollup-starter-ts-pnpm#readme",
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write"
+    ],
+    "*.ts?(x)": [
+      "eslint",
+      "prettier --parser=typescript --write"
+    ]
+  },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.10.2",
+    "@typescript-eslint/parser": "^5.10.2",
+    "@types/node": "^17.0.13",
+    "@commitlint/cli": "^16.1.0",
+    "@commitlint/config-conventional": "^16.0.0",
     "@rollup/plugin-typescript": "^8.3.1",
     "@types/jest": "^27.4.1",
+    "commitizen": "^4.2.4",
+    "conventional-changelog-cli": "^2.2.2",
+    "cz-conventional-changelog": "^3.3.0",
+    "cz-customizable": "^6.3.0",
+    "eslint": "^8.8.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-define-config": "^1.2.4",
+    "eslint-import-resolver-typescript": "^2.5.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.3.2",
+    "prettier": "^2.5.1",
+    "prettier-eslint": "^13.0.0",
+    "standard-version": "^9.3.2",
     "jest": "^27.5.1",
     "rollup": "^2.70.0",
     "rollup-plugin-sourcemaps": "^0.6.3",

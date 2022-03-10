@@ -4,9 +4,10 @@ To fast start a typescript library by pnpm .
 
 ---
 
-[-] jest
-[-] lint
-[-] git-cz
+- [-] jest
+- [-] lint
+- [-] git-cz
+- [-] github-action
 
 ---
 
